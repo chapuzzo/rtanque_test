@@ -7,8 +7,7 @@ machine:
     - sudo apt-get install -y build-essential libpango1.0-dev libgl1-mesa-dev libfreeimage-dev libopenal-dev libsndfile1-dev libfreeimage3 libfreeimage-dev
     - sudo apt-get install -y dpkg-dev mercurial
 test:
-  pre:
-    - bash ./install_SDL2.sh
   override:
+    - bash ./install_SDL2.sh
     - bundle install
     - bash ./test.sh
