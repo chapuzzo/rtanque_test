@@ -4,11 +4,9 @@ machine:
     - uname -a
     - cat /etc/issue*
     - lsb_release -a
-    #- sudo add-apt-repository -y ppa:team-xbmc/ppa
-    - sudo apt-get install -y dpkg-dev mercurial
-    - "mkdir libraries && cd libraries && hg clone https://hg.libsdl.org/SDL && cd SDL && ./configure && make && sudo make install"
-    - sudo apt-get update
     - sudo apt-get install -y build-essential libpango1.0-dev libgl1-mesa-dev libfreeimage-dev libopenal-dev libsndfile1-dev libfreeimage3 libfreeimage-dev
+    - sudo apt-get install -y dpkg-dev mercurial
+    - bash ./install_SDL2.sh
 test:
   override:
     - bundle install
