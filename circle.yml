@@ -1,6 +1,10 @@
+---
 machine:
   pre:
-   - sudo apt-get install build-essential libsdl2-dev libsdl2-ttf-dev libpango1.0-dev libgl1-mesa-dev libfreeimage-dev libopenal-dev libsndfile1-dev libfreeimage3 libfreeimage-dev
+    - uname -a
+    - cat /etc/issue*
+    - lsb_release -a
+    - sudo apt-get install build-essential libsdl2-dev libsdl2-ttf-dev libpango1.0-dev libgl1-mesa-dev libfreeimage-dev libopenal-dev libsndfile1-dev libfreeimage3 libfreeimage-dev
 test:
   override:
     - bundle install
