@@ -6,6 +6,7 @@ machine:
     - lsb_release -a
     - sudo apt-get install -y build-essential libpango1.0-dev libgl1-mesa-dev libfreeimage-dev libopenal-dev libsndfile1-dev libfreeimage3 libfreeimage-dev
     - sudo apt-get install -y dpkg-dev mercurial
+  post:
     - bash ./install_SDL2.sh
 test:
   override:
