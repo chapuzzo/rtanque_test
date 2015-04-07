@@ -19,7 +19,7 @@ do
   pushd
   src=${deps[${lib}]}
   echo "now cloning ${lib} from ${src}"
-  (mkdir ${lib}; cd ${lib}; wget ${src}; tar xvfz * -C . ; cd *; a_13; ./configure && make && sudo make install)
+  (mkdir ${lib}; wget ${src}; tar xvfz * -C ${lib}; cd ${lib};  ; read; cd *;read; a_13; read; ./configure && read && make && read && sudo make install)
   # pwd
   # ( cd ${lib} && && ./configure && make && sudo make install )
   # pwd
