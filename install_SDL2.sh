@@ -10,14 +10,10 @@ declare -A deps=(\
  [mixer]='https://www.libsdl.org/projects/SDL_mixer/release/SDL2_mixer-2.0.0.tar.gz'\
 )
 
-function a_13(){
-  find . -type f  |xargs -I,  sed -i 's/-1\.13//g' ,
-}
-
 function next_step(){
   pwd
   echo 'step done, next?'
-  read
+  # read
 }
 
 for lib in SDL image ttf mixer

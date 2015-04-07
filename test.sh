@@ -1,4 +1,4 @@
 #!/bin/bash
 
-rtanque new_bot test
-rtanque start bots/test.rb:x2 --max-ticks 50
+bundle exec rtanque new_bot test
+bundle exec rtanque start bots/test.rb:x2 --max-ticks 50

@@ -4,13 +4,17 @@ machine:
     - uname -a
     - cat /etc/issue*
     - lsb_release -a
-    - sudo apt-get install -y build-essential dpkg-dev automake libpango1.0-dev libgl1-mesa-dev libfreeimage-dev libopenal-dev libsndfile1-dev libfreeimage3 libfreeimage-dev
+    - sudo apt-get install -y freeglut3-dev build-essential dpkg-dev automake libpango1.0-dev libgl1-mesa-dev libfreeimage-dev libopenal-dev libsndfile1-dev libfreeimage3 libfreeimage-dev
     - wget http://archive.ubuntu.com/ubuntu/pool/main/a/automake1.13/automake_1.13.3-1.1ubuntu2_all.deb
     - sudo dpkg -i automake_1.13.3-1.1ubuntu2_all.deb
     # - sudo apt-get install -y mercurial
 dependencies:
   pre:
     - bash ./install_SDL2.sh
+  post:
+    - sudo apt-get install -y x11vnc
+    - x11vnc -forever -nopw:
+        background: true
 test:
   override:
     # - bundle install
