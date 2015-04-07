@@ -2,11 +2,26 @@
 
 mkdir libraries
 cd libraries
-for lib in SDL SDL_ttf SDL_image
+
+declare -A deps=(\
+ [sdl]='https://www.libsdl.org/release/SDL2-2.0.3.tar.gz'\
+ [ttf]='https://www.libsdl.org/projects/SDL_ttf/release/SDL2_ttf-2.0.12.tar.gz'\
+ [image]='https://www.libsdl.org/projects/SDL_image/release/SDL2_image-2.0.0.tar.gz'\
+ [mixer]='https://www.libsdl.org/projects/SDL_mixer/release/SDL2_mixer-2.0.0.tar.gz'\
+)
+
+function a_13(){
+  find . -type f  |xargs -I,  sed -i 's/-1\.13//g' ,
+}
+
+for lib in "${!deps[@]}"
 do
-  echo "now cloning ${lib}"
-  hg clone https://hg.libsdl.org/${lib}
-  pwd
-  ( cd ${lib} && find . -type f  |xargs -I,  sed -i 's/-1\.13//g' , && ./configure && make && sudo make install )
-  pwd
+  pushd
+  src=${deps[${lib}]}
+  echo "now cloning ${lib} from ${src}"
+  (mkdir ${lib}; cd ${lib}; wget ${src}; tar xvfz * -C . ; cd *; a_13; ./configure && make && sudo make install)
+  # pwd
+  # ( cd ${lib} && && ./configure && make && sudo make install )
+  # pwd
+  popd
 done
