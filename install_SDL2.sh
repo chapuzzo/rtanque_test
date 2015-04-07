@@ -20,7 +20,7 @@ function next_step(){
   read
 }
 
-for lib in sdl image ttf mixer
+for lib in SDL image ttf mixer
 do
   pushd .
   src=${deps[${lib}]}
