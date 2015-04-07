@@ -1,3 +1,4 @@
 ---
+sudo: required
 install:
 - bash ./install_SDL2.sh
