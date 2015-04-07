@@ -15,6 +15,7 @@ function a_13(){
 }
 
 function next_step(){
+  pwd
   echo 'step done, next?'
   read
 }
@@ -36,6 +37,6 @@ do
   next_step
   make
   next_step
-  sudo make install)
+  sudo make install
   popd
 done
