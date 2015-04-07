@@ -31,6 +31,6 @@ do
   next_step
   make
   next_step
-  sudo make install
+  sudo checkinstall
   popd
 done
