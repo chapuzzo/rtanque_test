@@ -20,18 +20,16 @@ function next_step(){
   read
 }
 
-for lib in "${!deps[@]}"
+for lib in sdl image ttf mixer
 do
   pushd .
   src=${deps[${lib}]}
   echo "now getting ${lib} from ${src}"
   mkdir ${lib}
   wget ${src}
-  tar xvfz *.tar.gz -C ${lib}
+  tar xvfz *${lib}*.tar.gz -C ${lib}
   cd ${lib}/*
   ls -la
-  next_step
-  a_13
   next_step
   ./configure
   next_step
