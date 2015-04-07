@@ -1,4 +1,6 @@
 ---
 sudo: required
 install:
-- bash ./install_SDL2.sh
+  - bash ./install_SDL2.sh
+script:
+  - bash ./test.sh
