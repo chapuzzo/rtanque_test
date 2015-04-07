@@ -14,14 +14,28 @@ function a_13(){
   find . -type f  |xargs -I,  sed -i 's/-1\.13//g' ,
 }
 
+function next_step(){
+  echo 'step done, next?'
+  read
+}
+
 for lib in "${!deps[@]}"
 do
-  pushd
+  pushd .
   src=${deps[${lib}]}
-  echo "now cloning ${lib} from ${src}"
-  (mkdir ${lib}; wget ${src}; tar xvfz * -C ${lib}; cd ${lib};  ; read; cd *;read; a_13; read; ./configure && read && make && read && sudo make install)
-  # pwd
-  # ( cd ${lib} && && ./configure && make && sudo make install )
-  # pwd
+  echo "now getting ${lib} from ${src}"
+  mkdir ${lib}
+  wget ${src}
+  tar xvfz *.tar.gz -C ${lib}
+  cd ${lib}/*
+  ls -la
+  next_step
+  a_13
+  next_step
+  ./configure
+  next_step
+  make
+  next_step
+  sudo make install)
   popd
 done
