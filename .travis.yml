@@ -1,0 +1,3 @@
+---
+install:
+- bash ./install_SDL2.sh
