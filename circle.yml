@@ -8,5 +8,4 @@ dependencies:
         background: true
 test:
   override:
-    # - bundle install
     - bash ./test.sh
