@@ -2,6 +2,7 @@
 dependencies:
   pre:
     - bash ./install_SDL2.sh
+    - gem instal bundler
   post:
     - sudo apt-get install -y x11vnc
     - x11vnc -forever -nopw:
