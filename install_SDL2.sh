@@ -1,5 +1,6 @@
 #!/bin/bash
 
+sudo apt-get update
 sudo apt-get install -y freeglut3-dev libpango1.0-dev libgl1-mesa-dev libfreeimage-dev libopenal-dev libsndfile1-dev libfreeimage3 libmpg123-dev libsdl2-dev libsdl2-ttf-dev
 # sudo apt-get install -y build-essential libsdl2-dev libsdl2-ttf-dev libpango1.0-dev libgl1-mesa-dev libopenal-dev libsndfile-dev libmpg123-dev
 sudo apt-get install -y g++-4.8 #dpkg-dev checkinstall
