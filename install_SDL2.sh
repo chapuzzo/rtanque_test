@@ -1,9 +1,11 @@
 #!/bin/bash
 
 sudo apt-get install -y freeglut3-dev libpango1.0-dev libgl1-mesa-dev libfreeimage-dev libopenal-dev libsndfile1-dev libfreeimage3 libfreeimage-dev libmpg123-dev
-sudo apt-get install -y build-essential dpkg-dev checkinstall
-wget http://archive.ubuntu.com/ubuntu/pool/main/a/automake1.13/automake_1.13.3-1.1ubuntu2_all.deb
-sudo dpkg -i automake_1.13.3-1.1ubuntu2_all.deb
+sudo apt-get install -y build-essential dpkg-dev checkinstall g++-4.8
+export CXX="g++-4.8"
+
+# wget http://archive.ubuntu.com/ubuntu/pool/main/a/automake1.13/automake_1.13.3-1.1ubuntu2_all.deb
+# sudo dpkg -i automake_1.13.3-1.1ubuntu2_all.deb
 
 
 mkdir libraries
